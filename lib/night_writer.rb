@@ -8,10 +8,14 @@ class NightWriter
   end
 
   def read
-    file = ARGV[0]
-    File.read(file).count
+    file = File.open(@filename)
+    incoming = file.read
+    incoming.length
 
   end
 
 
 end
+
+night = NightWriter.new('message.txt')
+night.read

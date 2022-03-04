@@ -13,8 +13,12 @@ RSpec.describe NightWriter do
       expect(@night_writer).to be_a(NightWriter)
   end
 
-  xit 'can read a file, give its character count' do
-    expect(@night_writer.read).to eq([])
+  it 'can read a file, give its character count' do
+    expect(@night_writer.read).to eq(55)
+  end
+
+  it 'can give a welcome message' do
+    expect(@night_writer.welcome).to eq("Created 'message.txt' containing 27 characters")
   end
 
 
