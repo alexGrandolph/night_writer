@@ -15,14 +15,14 @@ RSpec.describe NightWriter do
   end
 
   it 'can read given file' do
-    # 
+    #
     expect(@night_writer.read).to eq("here are a bunch of words.\n")
   end
 
-  # xit 'prints welcome message' do
-  #
-  #   expect(@night_writer.welcome).to eq("Created ./spec/test/braille.txt containing 27 characters")
-  # end
+  it 'can write to a new file' do
+    expected = @night_writer.read.upcase
+    expect(@night_writer.write).to eq(expected)
+  end
 
 
 
