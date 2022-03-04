@@ -14,8 +14,9 @@ RSpec.describe NightWriter do
       expect(@night_writer).to be_a(NightWriter)
   end
 
-  xit 'can read given file' do
-    expect(@night_writer.read.class).to be_a(File)
+  it 'can read given file' do
+    # 
+    expect(@night_writer.read).to eq("here are a bunch of words.\n")
   end
 
   # xit 'prints welcome message' do

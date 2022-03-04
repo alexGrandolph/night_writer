@@ -13,10 +13,10 @@ class NightWriter
   end
 
   def read
-    handle = File.open(@file)
+    handle = File.open(@file, 'r')
     incoming = handle.read
-    handle.close
-    handle
+
+    incoming 
   end
 
 
