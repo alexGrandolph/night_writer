@@ -21,7 +21,7 @@ RSpec.describe NightWriter do
 
   it 'can write to a new file' do
     expected = @night_writer.read.upcase
-    expect(@night_writer.write).to eq(expected)
+    expect(@night_writer.write_new_file).to eq(expected)
   end
 
 
