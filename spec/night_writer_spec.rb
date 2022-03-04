@@ -24,6 +24,10 @@ RSpec.describe NightWriter do
     expect(@night_writer.write_new_file).to eq(expected)
   end
 
+  it 'can give the welcome message' do
+    expect(@night_writer.welcome).to eq("Created #{@output} containing #{incoming.length} characters"")
+  end
+
 
 
 end
