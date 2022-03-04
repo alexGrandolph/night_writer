@@ -13,7 +13,7 @@ RSpec.describe Alphabet do
   end
 
   it 'has english to braille alphabet' do
-    expect(@alphabet.english_to_braille.class).to be_a(Hash)
+    expect(@alphabet.english_to_braille).to be_a(Hash)
   end
 
 
