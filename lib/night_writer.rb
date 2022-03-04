@@ -2,9 +2,10 @@
 
 class NightWriter
 
-  def initialize(input_file = ARGV[0])
+  def initialize(input_file = ARGV[0], output = ARGV[1])
     @input_file = input_file
-  end
+    @output = output
+  end 
 
 
 

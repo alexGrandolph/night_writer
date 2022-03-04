@@ -13,5 +13,10 @@ RSpec.describe NightWriter do
       expect(@night_writer).to be_a(NightWriter)
   end
 
+  it 'prints welcome message' do
+    expected = "Created #{@output} containing #{@output.length} characters"
+    expect(@night_writer.welcome).to eq(expected)
+  end
+
 
 end
