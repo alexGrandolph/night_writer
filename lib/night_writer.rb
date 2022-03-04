@@ -2,8 +2,15 @@
 
 class NightWriter
 
-  def initialize
-    @read_file = File.open(ARGV[0])
+  def initialize(filename)
+    @filename = filename
+
+  end
+
+  def read
+    file = ARGV[0]
+    File.read(file).count
+
   end
 
 
