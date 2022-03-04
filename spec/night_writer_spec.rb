@@ -18,5 +18,9 @@ RSpec.describe NightWriter do
     expect(@night_writer.welcome).to eq("Created ./spec/test/braille.txt containing 27 characters")
   end
 
+  it 'can read a file' do
+    expect(@night_writer.read.class).to be_a(File)
+  end
+
 
 end
