@@ -14,8 +14,12 @@ class NightWriter
 
   end
 
+  def welcome
+    "Created '#{@filename}' containing #{self.read} characters"
+
+  end
+
 
 end
 
-night = NightWriter.new('message.txt')
-night.read
+new = NightWriter.new('message.txt')

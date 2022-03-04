@@ -6,7 +6,7 @@ SimpleCov.start
 
 RSpec.describe NightWriter do
   before(:each) do
-    @night_writer = NightWriter.new('message.txt')
+    @night_writer = NightWriter.new('message.txt', 'braille.txt')
 
   end
   it 'exists' do
@@ -14,7 +14,7 @@ RSpec.describe NightWriter do
   end
 
   it 'can read a file, give its character count' do
-    expect(@night_writer.read).to eq(55)
+    expect(@night_writer.read).to eq(27)
   end
 
   it 'can give a welcome message' do
