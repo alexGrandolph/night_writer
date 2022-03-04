@@ -4,9 +4,9 @@ class NightWriter
 
   def initialize(file)
     @file = file
-    @message = open_file
-    @read_message = read_file
-    @braile = create_new_file
+    # @message = open_file
+    # @read_message = read_file
+    # @braile = create_new_file
     # input_file = ARGV[0], output = ARGV[1]
     # @input_file = input_file
     # @output = output
