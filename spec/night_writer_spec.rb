@@ -6,7 +6,7 @@ SimpleCov.start
 
 RSpec.describe NightWriter do
   before(:each) do
-    @night_writer = NightWriter.new('./spec/message.txt')
+    @night_writer = NightWriter.new('./spec/test/message.txt', './spec/test/braille.txt')
 
   end
   it 'exists' do
@@ -14,8 +14,8 @@ RSpec.describe NightWriter do
   end
 
   it 'prints welcome message' do
-    expected = "Created #{@output} containing #{@output.length} characters"
-    expect(@night_writer.welcome).to eq(expected)
+
+    expect(@night_writer.welcome).to eq("Created ./spec/test/braille.txt containing 27 characters")
   end
 
 
