@@ -6,7 +6,7 @@ SimpleCov.start
 
 RSpec.describe NightWriter do
   before(:each) do
-    @night_writer =
+    @night_writer = NightWriter.new('./spec/message.txt')
 
   end
   it 'exists' do
