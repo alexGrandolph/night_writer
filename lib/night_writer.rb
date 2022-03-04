@@ -15,10 +15,11 @@ class NightWriter
     write = File.open(@output, 'w')
     n = write.write('braille.txt')
     write.close
-    "Created #{@output} containing #{incoming.length} characters"
+    puts "Created #{@output} containing #{incoming.length} characters"
   end
 
 
 end
 
-new = NightWriter.new('message.txt')
+new = NightWriter.new('./spec/test/message.txt')
+new.welcome
