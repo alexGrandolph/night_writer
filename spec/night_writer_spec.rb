@@ -14,14 +14,14 @@ RSpec.describe NightWriter do
       expect(@night_writer).to be_a(NightWriter)
   end
 
-  xit 'can opem a file' do
-    expect(@night_writer.open.class).to be_a(File)
-  end
+  # xit 'can opem a file' do
+  #   expect(@night_writer.open.class).to be_a(File)
+  # end
 
-  xit 'prints welcome message' do
-
-    expect(@night_writer.welcome).to eq("Created ./spec/test/braille.txt containing 27 characters")
-  end
+  # xit 'prints welcome message' do
+  #
+  #   expect(@night_writer.welcome).to eq("Created ./spec/test/braille.txt containing 27 characters")
+  # end
 
 
 

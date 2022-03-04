@@ -13,26 +13,26 @@ class NightWriter
   end
 
   def read
-    handle = File.open(@input_file)
+    handle = File.open(@file)
     incoming = handle.read
     handle.close
     handle
   end
 
 
-  def welcome
-    handle = File.open(@input_file)
-    incoming = handle.read
-    handle.close
-    out = incoming.upcase
-    write = File.open(@output, 'w')
-    n = write.write('braille.txt')
-    write.close
-    puts "Created #{@output} containing #{incoming.length} characters"
-  end
+  # def welcome
+  #   handle = File.open(@input_file)
+  #   incoming = handle.read
+  #   handle.close
+  #   out = incoming.upcase
+  #   write = File.open(@output, 'w')
+  #   n = write.write('braille.txt')
+  #   write.close
+  #   puts "Created #{@output} containing #{incoming.length} characters"
+  # end
 
 
 end
 
-new = NightWriter.new('./spec/test/message.txt')
-new.welcome
+# new = NightWriter.new('./spec/test/message.txt')
+# new.welcome
