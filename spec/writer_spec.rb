@@ -68,25 +68,33 @@ RSpec.describe Writer do
         expect(@night.bottom_row.count).to eq(2)
         expect(@night.bottom_row).to eq(["..", ".."])
       end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   end
+
+    context 'Iteration 2' do
+      before(:each) do
+        ARGV[0] = './spec/test/letter_test.txt'
+        ARGV[1] = './spec/test/letter_output.txt'
+        @night = Writer.new
+      end
+
+      it 'can print/write one row at a time to the output file' do
+        expect(@night.braille_rows_to_output).to eq([])
+        expect{@night.braille_rows_to_output}.to output("created ./spec/test/test_output.txt 10 characters").to_stdout
+
+      end
+
+
+    end
+
+
+
+
+
+
+
+
+
+
 
 
 
