@@ -52,8 +52,9 @@ RSpec.describe Writer do
       end
 
       it 'can divide braille letter into top rows' do
-        @expect(@night.top_row).to be_a(Array)
-        @expect(@night.top_row.count).to eq(2)
+        expect(@night.top_row).to be_a(Array)
+        expect(@night.top_row.count).to eq(2)
+        expect(@night.top_row).to eq(["O.", "O."])
       end
 
 
