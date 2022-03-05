@@ -25,7 +25,7 @@ class Writer
 
   def read_output
     message = read_message
-    updated_message = message.upcase
+    updated_message = message
     writer = File.open(@output_file_path, "w")
     new = writer.write(updated_message)
     # require "pry"; binding.pry
@@ -47,7 +47,16 @@ class Writer
         end
       end
     end
-    array
+    # require "pry"; binding.pry
+    array #.to_s
   end
 
 end
+
+
+
+
+# row_1 = []
+# array.each do |letter|
+#   row_1 << letter[0]
+# end

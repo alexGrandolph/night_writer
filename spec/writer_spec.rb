@@ -25,7 +25,7 @@ RSpec.describe Writer do
     end
 
     it 'can write_message to a new file' do
-      # require "pry"; binding.pry
+
       expect{@night.write_message}.to output("created ./spec/test/test_output.txt 10 characters").to_stdout
     end
   end
@@ -47,7 +47,13 @@ RSpec.describe Writer do
       end
 
       it 'can convert  letters to braille' do
+        # require "pry"; binding.pry
         expect(@night.to_braille).to eq([["O.", "..", ".."], ["O.", "O.", ".."]])
+      end
+
+      it 'can divide braille letter into top rows' do
+        @expect(@night.top_row).to be_a(Array)
+        @expect(@night.top_row.count).to eq(2)
       end
 
 
