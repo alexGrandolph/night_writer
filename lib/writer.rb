@@ -20,9 +20,10 @@ class Writer
   message = read_message
   writer = File.open(@output_file_path, "w")
   new = writer.write(message)
+
   print "created #{@output_file_path} #{message.length} characters".delete("'")
 
-end
+  end
 
 
 end
