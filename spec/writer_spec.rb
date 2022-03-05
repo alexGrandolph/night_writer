@@ -63,6 +63,12 @@ RSpec.describe Writer do
         expect(@night.middle_row).to eq(["..", "O."])
       end
 
+      it 'can divide braille letter into bottom rows' do
+        expect(@night.bottom_row).to be_a(Array)
+        expect(@night.bottom_row.count).to eq(2)
+        expect(@night.bottom_row).to eq(["..", ".."])
+      end
+
 
 
 
