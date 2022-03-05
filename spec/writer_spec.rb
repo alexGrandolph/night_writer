@@ -20,10 +20,8 @@ RSpec.describe Writer do
   end
 
   it 'can read message from input file' do
-    expect(@night.read_message).to eq('test test')
+    expect(@night.read_message).to be_a(String)
   end
-
-
 
 
 
