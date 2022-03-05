@@ -19,6 +19,10 @@ RSpec.describe Writer do
     expect(@night.new_output_file).to eq(ARGV[1])
   end
 
+  it 'can read message from input file' do
+    expect(@night.read_message).to eq('test test')
+  end
+
 
 
 
