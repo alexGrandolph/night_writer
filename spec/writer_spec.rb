@@ -43,34 +43,34 @@ RSpec.describe Writer do
 
       it 'can load string from input file into an array'  do
         expect(@night.load_input).to be_a(Array)
-        expect(@night.load_input).to eq(["a", "b"])
+        expect(@night.load_input).to eq(["a", " ", "b", "\n"])
       end
 
       it 'can convert  letters to braille' do
         # require "pry"; binding.pry
-        expect(@night.to_braille).to eq([["O.", "..", ".."], ["O.", "O.", ".."]])
+        expect(@night.to_braille).to eq([["O.", "..", ".."], ["..", "..", ".."], ["O.", "O.", ".."]])
       end
 
       it 'can divide braille letter into top rows' do
         expect(@night.top_row).to be_a(Array)
-        expect(@night.top_row.count).to eq(2)
-        expect(@night.top_row).to eq(["O.", "O."])
+        expect(@night.top_row.count).to eq(3)
+        expect(@night.top_row).to eq(["O.", "..", "O."])
       end
 
       it 'can divide braille letter into middle rows' do
         expect(@night.middle_row).to be_a(Array)
-        expect(@night.middle_row.count).to eq(2)
-        expect(@night.middle_row).to eq(["..", "O."])
+        expect(@night.middle_row.count).to eq(3)
+        expect(@night.middle_row).to eq(["..", "..", "O."])
       end
 
       it 'can divide braille letter into bottom rows' do
         expect(@night.bottom_row).to be_a(Array)
-        expect(@night.bottom_row.count).to eq(2)
-        expect(@night.bottom_row).to eq(["..", ".."])
+        expect(@night.bottom_row.count).to eq(3)
+        expect(@night.bottom_row).to eq(["..", "..", ".."])
       end
   end
 
-    context 'Iteration 2' do
+    context 'Iteration 2.1' do
       before(:each) do
         ARGV[0] = './spec/test/letter_test.txt'
         ARGV[1] = './spec/test/letter_output.txt'
@@ -78,11 +78,7 @@ RSpec.describe Writer do
       end
 
       it 'can print/write one row at a time to the output file' do
-        
-        expect(@night.read_output).to eq([])
-        expect(@night.braille_rows_to_output).to eq([])
-        expect{@night.braille_rows_to_output}.to output("created ./spec/test/test_output.txt 10 characters").to_stdout
-
+        expect(@night.braille_rows_to_output).to eq(20)
       end
 
 
