@@ -24,9 +24,7 @@ RSpec.describe Writer do
   end
 
   it 'can write_message to a new file' do
-    expect{@night.write_message}.to output("created ./spec/test/test_output 9 characters").to_stdout
-    
-
+    expect{@night.write_message}.to output("created ./spec/test/test_output.txt 10 characters").to_stdout
   end
 
 

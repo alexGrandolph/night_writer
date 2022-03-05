@@ -16,5 +16,13 @@ class Writer
     File.open(@input_file_path).read
   end
 
+  def write_message
+  message = read_message
+  writer = File.open(@output_file_path, "w")
+  new = writer.write(message)
+  print "created #{@output_file_path} #{message.length} characters".delete("'")
+
+end
+
 
 end
