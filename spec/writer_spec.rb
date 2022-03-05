@@ -80,7 +80,20 @@ RSpec.describe Writer do
       it 'can print/write one row at a time to the output file' do
         expect(@night.braille_rows_to_output).to eq(20)
       end
+    end
 
+    context 'Iteration 2.2, multi words' do
+      before(:each) do
+        ARGV[0] = './spec/test/test_multi_words.txt'
+        ARGV[1] = './spec/test/multi_words_output.txt'
+        @night = Writer.new
+      end
+
+      it 'can print/write one row at a time to the output file' do
+
+
+        expect(@night.braille_rows_to_output).to eq(68)
+      end
 
     end
 

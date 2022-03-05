@@ -42,15 +42,18 @@ class Writer
   def to_braille
     array = []
     alpha_hash = Alphabet.new.english_to_braille
-    load_input.each do |letter|
-      alpha_hash.each do |alphabet_letter, braille|
-        if letter == alphabet_letter
-          array << alpha_hash[letter]
+    load_input.each do |word|
+      word.split('').each do |character|
+        alpha_hash.each do |alphabet_letter, braille|
+          if character == alphabet_letter
+            array << alpha_hash[character]
+          end
         end
       end
     end
-    # require "pry"; binding.pry
+
     array #.to_s
+    
   end
 
   def top_row
