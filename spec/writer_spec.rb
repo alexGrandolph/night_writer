@@ -78,6 +78,8 @@ RSpec.describe Writer do
       end
 
       it 'can print/write one row at a time to the output file' do
+        
+        expect(@night.read_output).to eq([])
         expect(@night.braille_rows_to_output).to eq([])
         expect{@night.braille_rows_to_output}.to output("created ./spec/test/test_output.txt 10 characters").to_stdout
 
