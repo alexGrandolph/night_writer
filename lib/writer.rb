@@ -20,9 +20,16 @@ class Writer
   message = read_message
   writer = File.open(@output_file_path, "w")
   new = writer.write(message)
-
   print "created #{@output_file_path} #{message.length} characters".delete("'")
+  end
 
+  def read_output
+    message = read_message
+    updated_message = message.upcase
+    writer = File.open(@output_file_path, "w")
+    new = writer.write(updated_message)
+    # require "pry"; binding.pry
+    updated_message
   end
 
 

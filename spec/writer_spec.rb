@@ -37,8 +37,8 @@ RSpec.describe Writer do
       @night = Writer.new
     end
 
-      it 'can print whats in the outfile' do
-        expect(@night.read_output).to eq(""O.", "..", ".."")
+      it 'can return whats in the outfile' do
+        expect(@night.read_output).to eq("A\n")
       end
 
 
