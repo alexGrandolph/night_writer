@@ -38,16 +38,16 @@ RSpec.describe Writer do
     end
 
       xit 'can return whats in the outfile' do
-        expect(@night.read_output).to eq("A\n")
+        expect(@night.read_output).to eq("AB\n")
       end
 
       it 'can load string from input file into an array'  do
         expect(@night.load_input).to be_a(Array)
-        expect(@night.load_input).to eq(["a", "b", "c", "d", "e", "f", "g"])
+        expect(@night.load_input).to eq(["a", "b"])
       end
 
-      xit 'can convert  letters to braille' do
-        expect(@night.to_braille('a')).to eq(["O.", "..", ".."])
+      it 'can convert  letters to braille' do
+        expect(@night.to_braille).to eq([["O.", "..", ".."], ["O.", "O.", ".."]])
       end
 
 

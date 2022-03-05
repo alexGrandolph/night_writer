@@ -1,4 +1,4 @@
-
+require 'alphabet'
 
 
 class Writer
@@ -35,9 +35,19 @@ class Writer
   def load_input
     input = read_message
     input.split
-    
-
   end
 
+  def to_braille
+    array = []
+    alpha_hash = Alphabet.new.english_to_braille
+    load_input.each do |letter|
+      alpha_hash.each do |alphabet_letter, braille|
+        if letter == alphabet_letter
+          array << alpha_hash[letter]
+        end
+      end
+    end
+    array
+  end
 
 end
