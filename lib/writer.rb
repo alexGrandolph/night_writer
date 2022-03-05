@@ -67,6 +67,14 @@ class Writer
     middle
   end
 
+  def bottom_row
+    bottom = []
+    to_braille.each do |letter|
+      bottom << letter[2]
+    end
+    bottom
+  end
+
 end
 
 
