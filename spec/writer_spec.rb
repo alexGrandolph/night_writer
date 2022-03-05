@@ -41,7 +41,11 @@ RSpec.describe Writer do
         expect(@night.read_output).to eq("A\n")
       end
 
-      it 'can convert  letters to braille' do
+      it 'can load string from input file into an array'  do
+        excpect(@night.load_input).to be_a(Array)
+      end
+
+      xit 'can convert  letters to braille' do
         expect(@night.to_braille('a')).to eq(["O.", "..", ".."])
       end
 
