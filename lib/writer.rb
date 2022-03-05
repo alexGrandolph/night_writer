@@ -36,7 +36,7 @@ class Writer
     input = read_message
     # require "pry"; binding.pry
     input.split(/(\W)/)
-    
+
   end
 
   def to_braille
@@ -45,7 +45,7 @@ class Writer
     load_input.each do |letter|
       alpha_hash.each do |alphabet_letter, braille|
         if letter == alphabet_letter
-          alpha_hash[letter]
+          array << alpha_hash[letter]
         end
       end
     end
@@ -59,6 +59,7 @@ class Writer
       top << letter[0]
     end
     top
+
   end
 
   def middle_row
@@ -80,10 +81,10 @@ class Writer
   def braille_rows_to_output
     rows = top_row, middle_row, bottom_row
 
-    row1 = top_row.each {|letter| letter.to_s}
-    row2 = middle_row
-    row3 = bottom_row
-    # require "pry"; binding.pry
+    row1 = top_row.join
+    row2 = middle_row.join
+    row3 = bottom_row.join
+
     writer = File.open(@output_file_path, "w")
     new = writer.write("#{row1}\n#{row2}\n#{row3}")
 
