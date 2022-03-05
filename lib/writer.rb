@@ -32,5 +32,12 @@ class Writer
     updated_message
   end
 
+  def load_input
+    input = read_message
+    input.split
+    
+
+  end
+
 
 end
