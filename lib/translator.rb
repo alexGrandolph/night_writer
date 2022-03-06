@@ -3,9 +3,10 @@ require 'writer'
 
 
 class Translator
-  attr_reader :english
+  attr_reader :english, :message
 
-  def initialize
+  def initialize(message)
+    @message = message
     @english = Alphabet.new.english_to_braille
   end
 
