@@ -41,6 +41,11 @@ class Writer
     input.split(/(\W)/)
   end
 
+  def output_braille
+    writer = File.open(@output_file_path, "w")
+    new = writer.write(@translator.formatted_braille_message)
+  end
+
   def to_braille
     braille_characters = []
 
