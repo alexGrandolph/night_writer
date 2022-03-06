@@ -1,15 +1,16 @@
 require 'alphabet'
+require 'translator'
 
 
 class Writer
 
-  attr_reader :english_braille_alphabet
+  attr_reader :english_braille_alphabet, :translator
 
   def initialize()
     @input_file_path = ARGV[0]
     @output_file_path = new_output_file
     @english_braille_alphabet = Alphabet.new.english_to_braille
-
+    @translator = Translator.new(read_message)
   end
 
   def new_output_file
@@ -82,7 +83,7 @@ class Writer
   def braille_rows_to_output
 
     row1 = top_row.each_slice(40).map {|s| s.join}
-    require "pry"; binding.pry
+
     row2 = middle_row.each_slice(40).map {|s| s.join}
     row3 = bottom_row.each_slice(40).map {|s| s.join}
 
