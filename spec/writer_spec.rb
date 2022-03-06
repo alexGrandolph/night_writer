@@ -127,6 +127,10 @@ RSpec.describe Writer do
       expect(@night.translator).to be_a(Translator)
     end
 
+    it 'can output the translated message into the output file' do
+      expect(@night.output_braille).to be_a(String)
+    end
+
 
 
 
