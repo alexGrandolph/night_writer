@@ -12,7 +12,6 @@ class Translator
 
   def to_braille
     braille_characters = []
-
     @message.each do |word|
       word.split('').each do |character|
         @english.each do |alphabet_letter, braille|
@@ -26,11 +25,7 @@ class Translator
   end
 
   def top_row
-    top = []
-    to_braille.each do |letter|
-      top << letter[0]
-    end
-    top
+    to_braille.map { |letter| letter[0] }
   end
 
 
