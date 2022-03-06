@@ -47,8 +47,21 @@ RSpec.describe Translator do
     it 'can take just the top row of all braille letters from to_braille' do
       expect(@translator.top_row).to eq(["O.", "O.", "O.", "O.", "O.", "..", ".O", "O.", "O.", "O.", "OO"])
     end
+  end
 
-    it 'can print a formatted braille message' do
+  context 'Iteration 2.2' do
+    before(:each) do
+      @translator = Translator.new("the quick brown fox jumped over the lazy brown dog pain pain pain pain pain pain pain")
+    end
+
+
+
+    it 'can format top_row if its more than 40 characters of braille' do
+      expect(@translator.top_row_formatted).to be_a(Array)
+      expect(@translator.top_row_formatted.count).to eq(3)
+    end
+
+    xit 'can print a formatted braille message' do
       expect(@translator.formatted_braille_message.class).to be_a(String)
     end
 
@@ -58,7 +71,7 @@ RSpec.describe Translator do
 
 
 
-  end
+
 
 
 

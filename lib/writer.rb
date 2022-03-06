@@ -42,7 +42,7 @@ class Writer
 
   def to_braille
     braille_characters = []
-    
+
     load_input.each do |word|
       word.split('').each do |character|
         @english_braille_alphabet.each do |alphabet_letter, braille|
@@ -82,6 +82,7 @@ class Writer
   def braille_rows_to_output
 
     row1 = top_row.each_slice(40).map {|s| s.join}
+    require "pry"; binding.pry
     row2 = middle_row.each_slice(40).map {|s| s.join}
     row3 = bottom_row.each_slice(40).map {|s| s.join}
 
