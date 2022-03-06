@@ -17,6 +17,10 @@ RSpec.describe Reader do
       expect(@reader).to be_a(Reader)
     end
 
+    it 'has readable attributes' do
+      expect(@reader.input_file).to eq('./spec/reader_test/reader_input.txt')
+    end
+
 
 
 
