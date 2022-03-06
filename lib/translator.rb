@@ -36,6 +36,10 @@ class Translator
     to_braille.map { |letter| letter[2] }
   end
 
+  def top_row_formatted
+    top_row.each_slice(40).map {|s| s.join}
+  end
+
 
 
 

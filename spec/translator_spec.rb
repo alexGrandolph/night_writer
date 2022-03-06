@@ -54,8 +54,6 @@ RSpec.describe Translator do
       @translator = Translator.new("the quick brown fox jumped over the lazy brown dog pain pain pain pain pain pain pain")
     end
 
-
-
     it 'can format top_row if its more than 40 characters of braille' do
       expect(@translator.top_row_formatted).to be_a(Array)
       expect(@translator.top_row_formatted.count).to eq(3)
@@ -69,7 +67,7 @@ RSpec.describe Translator do
 
 
 
-
+  end 
 
 
 
