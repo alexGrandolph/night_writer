@@ -28,32 +28,26 @@ class Writer
     updated_message = message
     writer = File.open(@output_file_path, "w")
     new = writer.write(updated_message)
-    # require "pry"; binding.pry
-
   end
 
   def load_input
     input = read_message
-    # require "pry"; binding.pry
     input.split(/(\W)/)
-
   end
 
   def to_braille
-    array = []
+    braille_characters = []
     alpha_hash = Alphabet.new.english_to_braille
     load_input.each do |word|
       word.split('').each do |character|
         alpha_hash.each do |alphabet_letter, braille|
           if character == alphabet_letter
-            array << alpha_hash[character]
+            braille_characters << alpha_hash[character]
           end
         end
       end
     end
-
-    array #.to_s
-
+    braille_characters
   end
 
   def top_row
@@ -62,9 +56,6 @@ class Writer
       top << letter[0]
     end
     top
-    # require "pry"; binding.pry
-    # if top.length > 40
-
   end
 
   def middle_row
@@ -84,27 +75,25 @@ class Writer
   end
 
   def braille_rows_to_output
-    row1 = top_row #.join
-    row2 = middle_row #.join
-    row3 = bottom_row #.join
-    # require "pry"; binding.pry
 
-    row1 = row1.each_slice(40).map {|s| s.join}
-    row2 = row2.each_slice(40).map {|s| s.join}
-    row3 = row3.each_slice(40).map {|s| s.join}
-    index = row1.count
+    row1 = top_row.each_slice(40).map {|s| s.join}
+    row2 = middle_row.each_slice(40).map {|s| s.join}
+    row3 = bottom_row.each_slice(40).map {|s| s.join}
 
-
-    require "pry"; binding.pry
     writer = File.open(@output_file_path, "w")
-    new = writer.write("#{row1[0]}\n#{row2[0]}\n#{row3[0]}\n\n#{row1[1]}\n#{row2[1]}\n#{row3[1]}")
-    # require "pry"; binding.pry
-
+    loop_number = row1.length
+    index = 0
+    loop_number.times do
+      new = writer.write("#{row1[index]}\n#{row2[index]}\n#{row3[index]}\n\n")
+      index = index + 1
+    end
   end
 
 end
 
 
+# writer = File.open(@output_file_path, "w")
+# new = writer.write("#{row1[0]}\n#{row2[0]}\n#{row3[0]}\n\n#{row1[1]}\n#{row2[1]}\n#{row3[1]}")
 
 
 # row_1 = []
