@@ -36,6 +36,17 @@ RSpec.describe Translator do
       it 'can take just the bottom row of all braille letters from to_braille' do
         expect(@translator.bottom_row).to eq(["..", "..", ".."])
       end
+  end
+
+
+  context 'Iteration 2.1' do
+    before(:each) do
+      @translator = Translator.new("hello world")
+    end
+
+    it 'can take just the top row of all braille letters from to_braille' do
+      expect(@translator.top_row).to eq(["O.", "..", "O."])
+    end
 
 
 
