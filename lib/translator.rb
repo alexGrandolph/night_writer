@@ -28,6 +28,16 @@ class Translator
     to_braille.map { |letter| letter[0] }
   end
 
+  def middle_row
+    to_braille.map { |letter| letter[1] }
+  end
+
+  def bottom_row
+    to_braille.map { |letter| letter[2] }
+  end
+
+
+
 
 
 end
