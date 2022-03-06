@@ -59,6 +59,16 @@ RSpec.describe Translator do
       expect(@translator.top_row_formatted.count).to eq(3)
     end
 
+    it 'can format middle_row if its more than 40 characters of braille' do
+      expect(@translator.middle_row_formatted).to be_a(Array)
+      expect(@translator.middle_row_formatted.count).to eq(3)
+    end
+
+    it 'can format bottom_row if its more than 40 characters of braille' do
+      expect(@translator.bottom_row_formatted).to be_a(Array)
+      expect(@translator.bottom_row_formatted.count).to eq(3)
+    end
+
     xit 'can print a formatted braille message' do
       expect(@translator.formatted_braille_message.class).to be_a(String)
     end
@@ -67,7 +77,7 @@ RSpec.describe Translator do
 
 
 
-  end 
+  end
 
 
 
