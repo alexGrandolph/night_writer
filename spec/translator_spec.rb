@@ -29,6 +29,14 @@ RSpec.describe Translator do
         expect(@translator.top_row).to eq(["O.", "..", "O."])
       end
 
+      it 'can take just the middle row of all braille letters from to_braille' do
+        expect(@translator.middle_row).to eq(["..", "..", "O."])
+      end
+
+      it 'can take just the bottom row of all braille letters from to_braille' do
+        expect(@translator.bottom_row).to eq(["..", "..", ".."])
+      end
+
 
 
 
