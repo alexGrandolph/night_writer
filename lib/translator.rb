@@ -6,14 +6,14 @@ class Translator
   attr_reader :english, :message
 
   def initialize(message)
-    @message = message
+    @message = message.split(/(\W)/)
     @english = Alphabet.new.english_to_braille
   end
 
-  def to_braille(message)
+  def to_braille
     braille_characters = []
-    message = message.split(/(\W)/)
-    message.each do |word|
+
+    @message.each do |word|
       word.split('').each do |character|
         @english.each do |alphabet_letter, braille|
           if character == alphabet_letter
