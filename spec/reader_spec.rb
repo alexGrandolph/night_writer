@@ -28,8 +28,19 @@ RSpec.describe Reader do
     it 'can display welcome message' do
       expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_output.txt 6 characters").to_stdout
     end
+  end
 
+  context 'iteration 3.2' do
 
+    before(:each) do
+        ARGV[0] = './spec/reader_test/reader_multi.txt'
+        ARGV[1] = './spec/reader_test/reader_multi_output.txt'
+        @reader = Reader.new
+    end
+
+    it 'can display welcome message' do
+      expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_multi_output.txt 69 characters").to_stdout
+    end
 
 
 

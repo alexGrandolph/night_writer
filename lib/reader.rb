@@ -19,7 +19,7 @@ class Reader
     message = File.open(@input_file).read
     writer = File.open(@output_file, "w")
     new = writer.write(message)
-    print "created #{@output_file} #{message.length} characters".delete("'")
+    print "created #{@output_file} #{message.length} characters"
   end
 
 
