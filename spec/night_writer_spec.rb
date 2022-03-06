@@ -5,11 +5,7 @@ SimpleCov.start
 
 
 RSpec.describe NightWriter do
-  before(:each) do
-    ARGV[0] = './spec/test/message.txt'
-    ARGV[1] = './spec/test/output_file.txt'
-    @night_writer = NightWriter.new(ARGV[0])
-  end
+
   it 'exists' do
     expect(@night_writer).to be_a(NightWriter)
   end

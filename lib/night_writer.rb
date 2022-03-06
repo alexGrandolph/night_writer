@@ -12,7 +12,7 @@ class NightWriter
     handle = File.open(@input_file, 'r')
     incoming = handle.read
     handle.close
-    out = incoming.upcase
+    out = incoming
     write = File.open("output_file.txt", 'w')
     count = write.write(out)
     write.close
