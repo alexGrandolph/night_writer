@@ -17,7 +17,7 @@ RSpec.describe Writer do
     end
 
     it 'has readable attributes' do
-    
+
       expect(@night.english_braille_alphabet).to be_a(Hash)
     end
 
@@ -42,8 +42,8 @@ RSpec.describe Writer do
       @night = Writer.new
     end
 
-      xit 'can return whats in the outfile' do
-        expect(@night.read_output).to eq("AB\n")
+      it 'can return whats in the outfile' do
+        expect(@night.read_output).to eq("a b\n")
       end
 
       it 'can load string from input file into an array'  do
@@ -83,7 +83,7 @@ RSpec.describe Writer do
       end
 
       it 'can print/write one row at a time to the output file' do
-        expect(@night.braille_rows_to_output).to eq(20)
+        expect(@night.braille_rows_to_output).to eq(1)
       end
     end
 
@@ -96,7 +96,7 @@ RSpec.describe Writer do
       end
 
       it 'can print/write one row at a time to the output file' do
-        expect(@night.braille_rows_to_output).to eq(68)
+        expect(@night.braille_rows_to_output).to eq(1)
       end
 
     end
@@ -110,8 +110,8 @@ RSpec.describe Writer do
       end
 
       it 'can write if input file is > 80 characters' do
-        # require "pry"; binding.pry
-        expect(@night.braille_rows_to_output).to eq(81)
+
+        expect(@night.braille_rows_to_output).to eq(3)
       end
 
 

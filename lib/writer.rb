@@ -32,6 +32,7 @@ class Writer
     updated_message = message
     writer = File.open(@output_file_path, "w")
     new = writer.write(updated_message)
+    updated_message
   end
 
   def load_input
@@ -91,7 +92,9 @@ class Writer
       new = writer.write("#{row1[index]}\n#{row2[index]}\n#{row3[index]}\n\n")
       index = index + 1
     end
+
   end
+
 
 end
 
