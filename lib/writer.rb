@@ -42,7 +42,7 @@ class Writer
 
   def to_braille
     braille_characters = []
-
+    
     load_input.each do |word|
       word.split('').each do |character|
         @english_braille_alphabet.each do |alphabet_letter, braille|

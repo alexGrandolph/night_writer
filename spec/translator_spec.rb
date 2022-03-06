@@ -21,7 +21,7 @@ RSpec.describe Translator do
       end
 
       it 'can convert a letters into its braille letter' do
-        expect(@translator.to_braille('a b')).to eq(["O.", "..", ".."], ["..", "..", ".."], ["O.", "O.", ".."])
+        expect(@translator.to_braille('a b')).to eq([["O.", "..", ".."], ["..", "..", ".."], ["O.", "O.", ".."]])
       end
 
 
