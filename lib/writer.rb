@@ -41,12 +41,12 @@ class Writer
 
   def to_braille
     braille_characters = []
-    alpha_hash = Alphabet.new.english_to_braille
+
     load_input.each do |word|
       word.split('').each do |character|
-        alpha_hash.each do |alphabet_letter, braille|
+        @english_braille_alphabet.each do |alphabet_letter, braille|
           if character == alphabet_letter
-            braille_characters << alpha_hash[character]
+            braille_characters << @english_braille_alphabet[character]
           end
         end
       end
