@@ -23,7 +23,10 @@ RSpec.describe Reader do
 
     it 'can return the output file' do
       expect(@reader.output_file).to eq('./spec/reader_test/reader_output.txt')
+    end
 
+    it 'can display welcome message' do
+      expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_output.txt 5 characters").to_stdout
     end
 
 
