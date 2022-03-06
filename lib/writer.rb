@@ -62,6 +62,7 @@ class Writer
       top << letter[0]
     end
     top
+    # require "pry"; binding.pry
     # if top.length > 40
 
   end
@@ -83,13 +84,20 @@ class Writer
   end
 
   def braille_rows_to_output
+    row1 = top_row #.join
+    row2 = middle_row #.join
+    row3 = bottom_row #.join
     # require "pry"; binding.pry
-    row1 = top_row.join
-    row2 = middle_row.join
-    row3 = bottom_row.join
 
+    row1 = row1.each_slice(40).map {|s| s.join}
+    row2 = row2.each_slice(40).map {|s| s.join}
+    row3 = row3.each_slice(40).map {|s| s.join}
+    index = row1.count
+
+
+    require "pry"; binding.pry
     writer = File.open(@output_file_path, "w")
-    new = writer.write("#{row1}\n#{row2}\n#{row3}")
+    new = writer.write("#{row1[0]}\n#{row2[0]}\n#{row3[0]}\n\n#{row1[1]}\n#{row2[1]}\n#{row3[1]}")
     # require "pry"; binding.pry
 
   end
