@@ -17,8 +17,7 @@ RSpec.describe Writer do
     end
 
     it 'has readable attributes' do
-      expect(@night.input_file_path).to eq('./spec/test/test_message.txt')
-      expect(@night.input_file_path).to eq('./spec/test/test_output.txt')
+    
       expect(@night.english_braille_alphabet).to be_a(Hash)
     end
 
