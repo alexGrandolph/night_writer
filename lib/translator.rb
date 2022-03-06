@@ -46,9 +46,26 @@ class Translator
 
   def bottom_row_formatted
     bottom_row.each_slice(40).map {|s| s.join}
+
   end
 
+  def formatted_braille_message
+    row1 = top_row_formatted
+    row2 = middle_row_formatted
+    row3 = bottom_row_formatted
+    loop_counter = row1.count
+    index = 0
+    string = ""
+    loop_counter.times do
+      string << "#{row1[index]}\n#{row2[index]}\n#{row3[index]}\n\n"
+      index = index + 1
+    end
+    string
 
+
+  end
+
+#.join(',').gsub(',', '\n')
 
 
 

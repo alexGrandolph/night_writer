@@ -72,8 +72,8 @@ RSpec.describe Translator do
       expect(@translator.bottom_row_formatted.last).to eq("..O.....O.")
     end
 
-    xit 'can print a formatted braille message' do
-      expect(@translator.formatted_braille_message.class).to be_a(String)
+    it 'can print a formatted braille message' do
+      expect(@translator.formatted_braille_message).to be_a(String)
     end
 
 
