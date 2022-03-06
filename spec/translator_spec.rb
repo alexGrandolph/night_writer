@@ -14,6 +14,10 @@ RSpec.describe Translator do
         expect(@translator).to be_a(Translator)
       end
 
+      it 'has readable attributes' do
+        expect(@translator.english).to be_a(Hash)
+      end
+
 
 
 
