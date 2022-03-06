@@ -1,7 +1,6 @@
-require './lib/writer'
-require 'alphabet'
-require 'rspec'
+require './lib/translator'
 require 'simplecov'
+require 'rspec'
 SimpleCov.start
 
 RSpec.describe Translator do
