@@ -45,7 +45,11 @@ RSpec.describe Translator do
     end
 
     it 'can take just the top row of all braille letters from to_braille' do
-      expect(@translator.top_row).to eq(["O.", "..", "O."])
+      expect(@translator.top_row).to eq(["O.", "O.", "O.", "O.", "O.", "..", ".O", "O.", "O.", "O.", "OO"])
+    end
+
+    it 'can print a formatted braille message' do
+      expect(@translator.formatted_braille_message.class).to be_a(String)
     end
 
 
