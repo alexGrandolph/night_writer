@@ -7,7 +7,7 @@ RSpec.describe Translator do
 
   context 'Iteration 2.1' do
     before(:each) do
-      @translator = Translator.new
+      @translator = Translator.new("a b")
     end
 
       it 'exists' do
@@ -15,6 +15,7 @@ RSpec.describe Translator do
       end
 
       it 'has readable attributes' do
+        expect(@translator.message).to eq("a b")
         expect(@translator.english).to be_a(Hash)
         expect(@translator.english.keys).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
         expect(@translator.english['m']).to eq(["OO", "..", "O."])

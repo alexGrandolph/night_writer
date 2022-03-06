@@ -24,6 +24,13 @@ class Translator
     braille_characters
   end
 
+  def top_row
+    top = []
+    to_braille.each do |letter|
+      top << letter[0]
+    end
+    top
+  end
 
 
 
