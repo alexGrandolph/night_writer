@@ -83,6 +83,7 @@ RSpec.describe Writer do
     end
 
     context 'Iteration 2.2, multi words' do
+
       before(:each) do
         ARGV[0] = './spec/test/test_multi_words.txt'
         ARGV[1] = './spec/test/multi_words_output.txt'
@@ -90,22 +91,29 @@ RSpec.describe Writer do
       end
 
       it 'can print/write one row at a time to the output file' do
-
-
         expect(@night.braille_rows_to_output).to eq(68)
       end
 
     end
 
+    context 'Iteration 2.3, > 80 character lines' do
+
+      before(:each) do
+        ARGV[0] = './spec/test/80characters.txt'
+        ARGV[1] = './spec/test/480characters_output.txt'
+        @night = Writer.new
+      end
+
+      it 'can write if input file is > 80 characters' do
+        expect(@night.braille_rows_to_output).to eq(81)
+      end
 
 
 
 
 
 
-
-
-
+    end
 
 
 

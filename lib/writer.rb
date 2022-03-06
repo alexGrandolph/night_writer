@@ -53,7 +53,7 @@ class Writer
     end
 
     array #.to_s
-    
+
   end
 
   def top_row
@@ -62,6 +62,7 @@ class Writer
       top << letter[0]
     end
     top
+    # if top.length > 40
 
   end
 
@@ -82,14 +83,14 @@ class Writer
   end
 
   def braille_rows_to_output
-    rows = top_row, middle_row, bottom_row
-
+    # require "pry"; binding.pry
     row1 = top_row.join
     row2 = middle_row.join
     row3 = bottom_row.join
 
     writer = File.open(@output_file_path, "w")
     new = writer.write("#{row1}\n#{row2}\n#{row3}")
+    # require "pry"; binding.pry
 
   end
 
