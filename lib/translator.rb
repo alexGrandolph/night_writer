@@ -40,6 +40,14 @@ class Translator
     top_row.each_slice(40).map {|s| s.join}
   end
 
+  def middle_row_formatted
+    middle_row.each_slice(40).map {|s| s.join}
+  end
+
+  def bottom_row_formatted
+    bottom_row.each_slice(40).map {|s| s.join}
+  end
+
 
 
 
