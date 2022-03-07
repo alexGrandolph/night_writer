@@ -31,7 +31,6 @@ RSpec.describe BrailleTranslator do
     it 'can translate message into english letter' do
       expect(@translator.translate).to be_a(String)
       expect(@translator.translate).to eq("h")
-
     end
 
 

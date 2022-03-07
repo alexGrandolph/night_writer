@@ -14,5 +14,13 @@ class BrailleTranslator
     @message.split("\n")
   end
 
+  def translate
+    all_letters = @braille.values
+    all_braille = @braille.keys
+    if all_braille.include?(format_message)
+      @braille[format_message]
+    end
+  end
+
 
 end
