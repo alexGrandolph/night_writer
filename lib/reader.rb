@@ -27,6 +27,15 @@ class Reader
     print "created #{@output_file} #{message.length} characters"
   end
 
+  def output_translated_message
+    writer = File.open(@output_file, "w")
+    new = writer.write(@braille_translator.output_ready_message)
+    # require "pry"; binding.pry
+    print "created #{@output_file} containing #{read_message.length} characters"
+
+
+  end
+
 
 
 end

@@ -62,8 +62,8 @@ RSpec.describe Reader do
     end
 
     it 'can output a translated message to the output file path' do
-      {@readeroutput_translated_message}.to output("created ./spec/reader_test/final_output.txt 500 characters").to_stdout
-      
+      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/final_output.txt containing 521 characters").to_stdout
+
     end
 
 
