@@ -49,6 +49,8 @@ RSpec.describe BrailleTranslator do
       expect(@translator.long_lines.count).to eq(3)
     end
 
+
+
     it 'can give top_row, middle_row, bottom_row of all characters in message' do
       expect(@translator.top_row).to be_a(Array)
       expect(@translator.top_row.count).to eq(11)
@@ -69,17 +71,6 @@ RSpec.describe BrailleTranslator do
       expect(@translator.output_ready_message).to be_a(String)
       expect(@translator.output_ready_message.length).to eq(11)
     end
-
-
-
-
   end
-
-
-
-
-
-
-
 
 end

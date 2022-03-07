@@ -55,6 +55,7 @@ RSpec.describe Translator do
     end
 
     it 'can format top_row if its more than 40 characters of braille' do
+
       expect(@translator.top_row_formatted).to be_a(Array)
       expect(@translator.top_row_formatted.count).to eq(3)
       expect(@translator.top_row_formatted.last).to eq("..OOO..OOO")

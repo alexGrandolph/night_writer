@@ -1,5 +1,5 @@
-require 'alphabet'
-require 'braille_translator'
+require_relative 'alphabet'
+require_relative 'braille_translator'
 
 
 class Reader
@@ -30,7 +30,6 @@ class Reader
   def output_translated_message
     writer = File.open(@output_file, "w")
     new = writer.write(@braille_translator.output_ready_message)
-    # require "pry"; binding.pry
     print "created #{@output_file} containing #{read_message.length} characters"
 
 

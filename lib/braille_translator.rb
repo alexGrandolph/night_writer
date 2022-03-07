@@ -71,42 +71,6 @@ class BrailleTranslator
     final_bottom
   end
 
-  def tp
-    top = []
-    top << format_message[0]
-    formatted_top = top.join.split('')
-    top_array = []
-    formatted_top.each_slice(2).map do |top|
-      top_array << "#{top.first}#{top.last}"
-    end
-    top_array
-
-  end
-
-  def middl
-    middle = []
-    middle << format_message[1]
-    formatted_mid = middle.join.split('')
-    mid_array = []
-    formatted_mid.each_slice(2).map do |top|
-      mid_array << "#{top.first}#{top.last}"
-    end
-
-    mid_array
-  end
-
-  def botto
-    bottom = []
-    bottom << format_message[2]
-    formatted_bot = bottom.join.split('')
-    bot_array = []
-    formatted_bot.each_slice(2).map do |top|
-      bot_array << "#{top.first}#{top.last}"
-    end
-    bot_array
-  end
-
-
   def translate_message
     final_message = [top_row, middle_row, bottom_row].transpose
     all_braille = @braille.keys
@@ -125,6 +89,8 @@ class BrailleTranslator
 
 
 end
+
+
 #   whole_message = [top_row, middle_row, bottom_row] #.transpose
 #   require "pry"; binding.pry
 #   all_braille = @braille.keys
