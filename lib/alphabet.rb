@@ -41,7 +41,7 @@ class Alphabet
 
   def braille_to_english
     english_to_braille.invert
-    
+
   end
 
 end

@@ -66,7 +66,11 @@ class BrailleTranslator
         array << @braille[collumn]
       end
     end
-    array 
+    array
+  end
+
+  def output_ready_message
+    translate_message.join
   end
 
 

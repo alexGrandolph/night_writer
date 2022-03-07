@@ -1,5 +1,5 @@
-require 'alphabet'
-require 'writer'
+require_relative 'writer'
+require_relative 'alphabet'
 
 
 class Translator
