@@ -17,8 +17,8 @@ RSpec.describe BrailleTranslator do
 
     it 'has readable attributes' do
       expect(@translator.braille).to be_a(Hash)
-      require "pry"; binding.pry
       expect(@translator.braille["OO", "..", "O."]).to eq("m")
+      expect(@translator.message).to be_a(String)
     end
 
 
