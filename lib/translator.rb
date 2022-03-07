@@ -1,5 +1,5 @@
-require 'alphabet'
-require 'writer'
+require_relative 'writer'
+require_relative 'alphabet'
 
 
 class Translator
@@ -7,6 +7,7 @@ class Translator
 
   def initialize(message)
     @message = message.split(/(\W)/)
+
     @english = Alphabet.new.english_to_braille
   end
 
