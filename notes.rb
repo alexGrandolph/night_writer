@@ -184,3 +184,121 @@ __________________________________________
 #   new = writer.write(updated_message)
 #   updated_message
 # end
+
+#     it 'can convert  letters to braille' do
+#       expect(@night.to_braille).to eq([["O.", "..", ".."], ["..", "..", ".."], ["O.", "O.", ".."]])
+#     end
+#
+#     it 'can divide braille letter into top rows' do
+#       expect(@night.top_row).to be_a(Array)
+#       expect(@night.top_row.count).to eq(3)
+#       expect(@night.top_row).to eq(["O.", "..", "O."])
+#     end
+#
+#     it 'can divide braille letter into middle rows' do
+#       expect(@night.middle_row).to be_a(Array)
+#       expect(@night.middle_row.count).to eq(3)
+#       expect(@night.middle_row).to eq(["..", "..", "O."])
+#     end
+#
+#     it 'can divide braille letter into bottom rows' do
+#       expect(@night.bottom_row).to be_a(Array)
+#       expect(@night.bottom_row.count).to eq(3)
+#       expect(@night.bottom_row).to eq(["..", "..", ".."])
+#     end
+# end
+#
+#   context 'Iteration 2.1' do
+#
+#     before(:each) do
+#       ARGV[0] = './spec/test/letter_test.txt'
+#       ARGV[1] = './spec/test/letter_output.txt'
+#       @night = Writer.new
+#     end
+#
+#       it 'can print/write one row at a time to the output file' do
+#         expect(@night.braille_rows_to_output).to eq(1)
+#       end
+#   end
+#
+#   context 'Iteration 2.2, multi words' do
+#
+#     before(:each) do
+#       ARGV[0] = './spec/test/test_multi_words.txt'
+#       ARGV[1] = './spec/test/multi_words_output.txt'
+#       @night = Writer.new
+#     end
+#
+#       it 'can print/write one row at a time to the output file' do
+#         expect(@night.braille_rows_to_output).to eq(1)
+#       end
+#   end
+#
+#   context 'Iteration 2.3, > 80 character lines' do
+#
+#     before(:each) do
+#       ARGV[0] = './spec/test/80characters.txt'
+#       ARGV[1] = './spec/test/80characters_output.txt'
+#       @night = Writer.new
+#     end
+#
+#       it 'can write if input file is > 80 characters' do
+#
+#         expect(@night.braille_rows_to_output).to eq(3)
+#       end
+#   end
+# def to_braille
+#   braille_characters = []
+#
+#   load_input.each do |word|
+#     word.split('').each do |character|
+#       @english_braille_alphabet.each do |alphabet_letter, braille|
+#         if character == alphabet_letter
+#           braille_characters << @english_braille_alphabet[character]
+#         end
+#       end
+#     end
+#   end
+#   braille_characters
+# end
+#
+# def top_row
+#   top = []
+#   to_braille.each do |letter|
+#     top << letter[0]
+#   end
+#   top
+# end
+#
+# def middle_row
+#   middle = []
+#   to_braille.each do |letter|
+#     middle << letter[1]
+#   end
+#   middle
+# end
+#
+# def bottom_row
+#   bottom = []
+#   to_braille.each do |letter|
+#     bottom << letter[2]
+#   end
+#   bottom
+# end
+#
+# def braille_rows_to_output
+#
+#   row1 = top_row.each_slice(40).map {|s| s.join}
+#
+#   row2 = middle_row.each_slice(40).map {|s| s.join}
+#   row3 = bottom_row.each_slice(40).map {|s| s.join}
+#
+#   writer = File.open(@output_file_path, "w")
+#   loop_number = row1.length
+#   index = 0
+#   loop_number.times do
+#     new = writer.write("#{row1[index]}\n#{row2[index]}\n#{row3[index]}\n\n")
+#     index = index + 1
+#   end
+#
+# end
