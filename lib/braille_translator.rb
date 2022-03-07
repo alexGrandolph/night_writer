@@ -22,5 +22,10 @@ class BrailleTranslator
     end
   end
 
+  def translate_message
+    whole_message = format_message
+    require "pry"; binding.pry
+  end
+
 
 end

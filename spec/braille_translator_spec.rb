@@ -44,6 +44,17 @@ RSpec.describe BrailleTranslator do
       expect(@translator.format_message.count).to eq(3)
     end
 
+    it 'can give top_row, middle_row, bottom_row of all characters in message' do
+      expect(@translator.top_row).to be_a(Array)
+      expect(@translator.top_row.count).to be_a(12) #last line break is extra character
+
+      expect(@translator.middle_row).to be_a(Array)
+      expect(@translator.middle_row.count).to be_a(12)
+
+      expect(@translator.bottom_row).to be_a(Array)
+      expect(@translator.bottom_row.count).to be_a(12)
+    end
+
     it 'can translate a multi word message' do
       expect(@translator.translate_message).to eq("hello world")
     end
