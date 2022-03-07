@@ -44,9 +44,9 @@ RSpec.describe BrailleTranslator do
       expect(@translator.format_message.count).to eq(3)
     end
 
-    it 'can return an array with three elements, one for each row' do
-      expect(@translator.long_lines).to be_a(Array)
-      expect(@translator.long_lines.count).to eq(3)
+    it 'can combine over 40 character lines of each row, into an array' do
+      expect(@translator.combine_rows).to be_a(Array)
+      expect(@translator.combine_rows.count).to eq(3)
     end
 
 

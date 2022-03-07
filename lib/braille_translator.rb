@@ -22,7 +22,7 @@ class BrailleTranslator
     end
   end
 
-  def long_lines
+  def combine_rows
     top = []
     middle = []
     bottom = []
@@ -40,7 +40,7 @@ class BrailleTranslator
   end
 
   def top_row
-    top_array = long_lines[0].join.split('')
+    top_array = combine_rows[0].join.split('')
     top_array.each_slice(2).map do |top|
       "#{top.first}#{top.last}"
     end
@@ -48,14 +48,14 @@ class BrailleTranslator
   end
 
   def middle_row
-    mid_array = long_lines[1].join.split('')
+    mid_array = combine_rows[1].join.split('')
     mid_array.each_slice(2).map do |mid|
       "#{mid.first}#{mid.last}"
     end
   end
 
   def bottom_row
-    bottom_array = long_lines[2].join.split('')
+    bottom_array = combine_rows[2].join.split('')
     bottom_array.each_slice(2).map do |bottom|
       "#{bottom.first}#{bottom.last}"
     end
