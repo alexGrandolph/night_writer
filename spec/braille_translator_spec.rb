@@ -47,6 +47,9 @@ RSpec.describe BrailleTranslator do
     it 'can combine over 40 character lines of each row, into an array' do
       expect(@translator.combine_rows).to be_a(Array)
       expect(@translator.combine_rows.count).to eq(3)
+      expect(@translator.combine_rows[0]).to eq(["O.O.O.O.O....OO.O.O.OO"])
+      expect(@translator.combine_rows[1]).to eq(["OO.OO.O..O..OO.OOOO..O"])
+      expect(@translator.combine_rows[2]).to eq(["....O.O.O....OO.O.O..."])
     end
 
 
