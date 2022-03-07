@@ -1,14 +1,15 @@
 require 'alphabet'
-require 'translator'
+require 'braille_translator'
 
 
 class Reader
 
-  attr_reader :input_file, :output_file
+  attr_reader :input_file, :output_file, :braille_translator
 
   def initialize
     @input_file = ARGV[0]
     @output_file = get_output_file
+    @braille_translator = BrailleTranslator.new(read_message)
   end
 
   def get_output_file
