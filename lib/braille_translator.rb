@@ -25,25 +25,29 @@ class BrailleTranslator
   def top_row
     top = []
     top << format_message[0]
-    top.join.split('')
+    formatted_top = top.join.split('')
+    formatted_top.combination(2).map {|char| char.join}.first(formatted_top.count/2)
   end
 
   def middle_row
     middle = []
     middle << format_message[0]
-    middle.join.split('')
+    formatted_mid = middle.join.split('')
+    formatted_mid.combination(2).map {|char| char.join}.first(formatted_mid.count/2)
+
   end
 
   def bottom_row
     bottom = []
     bottom << format_message[0]
-    bottom.join.split('')
+    formatted_bot = bottom.join.split('')
+    formatted_bot.combination(2).map {|char| char.join}.first(formatted_bot.count/2)
   end
 
 
   def translate_message
     whole_message = format_message
-    require "pry"; binding.pry
+
   end
 
 
