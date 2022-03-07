@@ -16,11 +16,9 @@ RSpec.describe BrailleTranslator do
     end
 
     it 'has readable attributes' do
-
       expect(@translator.braille).to be_a(Hash)
       expect(@translator.braille[["OO", "..", "O."]]).to eq("m")
       expect(@translator.message).to be_a(String)
-
     end
 
     it 'can format message string into a comma separated array' do
@@ -35,6 +33,7 @@ RSpec.describe BrailleTranslator do
   end
 
   context 'Iteration 3.2, multi word message' do
+    
     before(:each) do
       @translator = BrailleTranslator.new("O.O.O.O.O....OO.O.O.OO\nOO.OO.O..O..OO.OOOO..O\n....O.O.O....OO.O.O...")
     end
@@ -51,8 +50,6 @@ RSpec.describe BrailleTranslator do
       expect(@translator.combine_rows[1]).to eq(["OO.OO.O..O..OO.OOOO..O"])
       expect(@translator.combine_rows[2]).to eq(["....O.O.O....OO.O.O..."])
     end
-
-
 
     it 'can give the top_row of all characters in message' do
       expect(@translator.top_row).to be_a(Array)
