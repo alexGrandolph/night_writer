@@ -32,6 +32,18 @@ RSpec.describe BrailleTranslator do
       expect(@translator.translate).to be_a(String)
       expect(@translator.translate).to eq("h")
     end
+  end
+
+  context 'Iteration 3.2, multi word message' do
+    before(:each) do
+      @translator = BrailleTranslator.new("O.O.O.O.O....OO.O.O.OO\nOO.OO.O..O..OO.OOOO..O\n....O.O.O....OO.O.O...")
+    end
+
+    it 'can format string into comma seperated array' do
+      expect(@translator.format_message).to be_a(Array)
+      expect(@translator.format_message.count).to eq(3)
+    end
+
 
 
 
