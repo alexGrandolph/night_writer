@@ -21,20 +21,20 @@ class Writer
     File.open(@input_file_path).read
   end
 
-  def write_message
-  message = read_message
-  writer = File.open(@output_file_path, "w")
-  new = writer.write(message)
-  print "created #{@output_file_path} #{message.length} characters".delete("'")
-  end
+  # def write_message
+  # message = read_message
+  # writer = File.open(@output_file_path, "w")
+  # new = writer.write(message)
+  # print "created #{@output_file_path} #{message.length} characters".delete("'")
+  # end
 
-  def read_output
-    message = read_message
-    updated_message = message
-    writer = File.open(@output_file_path, "w")
-    new = writer.write(updated_message)
-    updated_message
-  end
+  # def read_output
+  #   message = read_message
+  #   updated_message = message
+  #   writer = File.open(@output_file_path, "w")
+  #   new = writer.write(updated_message)
+  #   updated_message
+  # end
 
   def load_input
     input = read_message

@@ -155,3 +155,32 @@ end
     end
     bot_array
   end
+__________________________________________
+# removed/trimmed stuff
+
+# writer class and spec
+
+# it 'can write_message to a new file' do
+#
+#   expect{@night.write_message}.to output("created ./spec/test/test_output.txt 10 characters").to_stdout
+# end
+
+
+# it 'can return whats in the outfile' do
+#   expect(@night.read_output).to eq("a b\n")
+# end
+
+# def write_message
+# message = read_message
+# writer = File.open(@output_file_path, "w")
+# new = writer.write(message)
+# print "created #{@output_file_path} #{message.length} characters".delete("'")
+# end
+
+# def read_output
+#   message = read_message
+#   updated_message = message
+#   writer = File.open(@output_file_path, "w")
+#   new = writer.write(updated_message)
+#   updated_message
+# end
