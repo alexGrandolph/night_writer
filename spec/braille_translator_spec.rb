@@ -54,13 +54,22 @@ RSpec.describe BrailleTranslator do
 
 
 
-    it 'can give top_row, middle_row, bottom_row of all characters in message' do
+    it 'can give the top_row of all characters in message' do
       expect(@translator.top_row).to be_a(Array)
       expect(@translator.top_row.count).to eq(11)
+      expect(@translator.top_row).to eq(["O.", "O.", "O.", "O.", "O.", "..", ".O", "O.", "O.", "O.", "OO"])
+    end
+
+    it 'can give the middle_row of all characters in message' do
       expect(@translator.middle_row).to be_a(Array)
       expect(@translator.middle_row.count).to eq(11)
+      expect(@translator.middle_row).to eq(["OO", ".O", "O.", "O.", ".O", "..", "OO", ".O", "OO", "O.", ".O"])
+    end
+
+    it 'can give the bottom_row of all characters in message' do
       expect(@translator.bottom_row).to be_a(Array)
       expect(@translator.bottom_row.count).to eq(11)
+      expect(@translator.bottom_row).to eq(["..", "..", "O.", "O.", "O.", "..", ".O", "O.", "O.", "O.", ".."])
     end
 
     it 'can translate a multi word message' do
