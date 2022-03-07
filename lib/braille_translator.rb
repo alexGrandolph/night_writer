@@ -26,28 +26,47 @@ class BrailleTranslator
     top = []
     top << format_message[0]
     formatted_top = top.join.split('')
-    formatted_top.combination(2).map {|char| char.join}.first(formatted_top.count/2)
+    top_array = []
+    formatted_top.each_slice(2).map do |top|
+      top_array << "#{top.first}#{top.last}"
+    end
+    top_array
   end
 
   def middle_row
     middle = []
-    middle << format_message[0]
+    middle << format_message[1]
     formatted_mid = middle.join.split('')
-    formatted_mid.combination(2).map {|char| char.join}.first(formatted_mid.count/2)
+    mid_array = []
+    formatted_mid.each_slice(2).map do |top|
+      mid_array << "#{top.first}#{top.last}"
+    end
 
+    mid_array
   end
 
   def bottom_row
     bottom = []
-    bottom << format_message[0]
+    bottom << format_message[2]
     formatted_bot = bottom.join.split('')
-    formatted_bot.combination(2).map {|char| char.join}.first(formatted_bot.count/2)
+    bot_array = []
+    formatted_bot.each_slice(2).map do |top|
+      bot_array << "#{top.first}#{top.last}"
+    end
+    bot_array
   end
 
 
   def translate_message
-    whole_message = format_message
-
+    whole_message = [top_row, middle_row, bottom_row].transpose
+    all_braille = @braille.keys
+    array = []
+    whole_message.each do |collumn|
+      if all_braille.include?(collumn)
+        array << @braille[collumn]
+      end
+    end
+    array 
   end
 
 
