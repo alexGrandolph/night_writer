@@ -50,7 +50,7 @@ RSpec.describe BrailleTranslator do
 
 
       expect(@translator.middle_row).to be_a(Array)
-      expect(@translator.middle_row.count).to be_a(22)
+      expect(@translator.middle_row.count).to eq(22)
 
       expect(@translator.bottom_row).to be_a(Array)
       expect(@translator.bottom_row.count).to eq(22)
