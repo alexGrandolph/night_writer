@@ -49,13 +49,13 @@ RSpec.describe Reader do
   end
 
 
-  context 'Iteration 3.3, integration of BrailleTranslator class'
+  context 'Iteration 3.3, integration of BrailleTranslator class' do
 
-  before(:each) do
+    before(:each) do
       ARGV[0] = './spec/reader_test/final_message.txt'
       ARGV[1] = './spec/reader_test/final_output.txt'
       @reader = Reader.new
-  end
+    end
 
     it 'can read the translator object initialization' do
       expect(@reader.braille_translator).to be_a(BrailleTranslator)
@@ -63,21 +63,8 @@ RSpec.describe Reader do
 
     it 'can output a translated message to the output file path' do
       expect{@reader.output_translated_message}.to output("created ./spec/reader_test/final_output.txt containing 629 characters").to_stdout
-
     end
-
-
-
-
-
-
-
-
-
-
-
-
-
+  end
 
 
 end

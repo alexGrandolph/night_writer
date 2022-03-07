@@ -31,10 +31,6 @@ class Reader
     writer = File.open(@output_file, "w")
     new = writer.write(@braille_translator.output_ready_message)
     print "created #{@output_file} containing #{read_message.length} characters"
-
-
   end
-
-
 
 end
