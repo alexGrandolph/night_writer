@@ -56,9 +56,9 @@ RSpec.describe BrailleTranslator do
       expect(@translator.bottom_row.count).to eq(22)
     end
 
-    # it 'can translate a multi word message' do
-    #   expect(@translator.translate_message).to eq("hello world")
-    # end
+    it 'can translate a multi word message' do
+      expect(@translator.translate_message).to eq("hello world")
+    end
 
 
 

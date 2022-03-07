@@ -43,7 +43,7 @@ class BrailleTranslator
 
   def translate_message
     whole_message = format_message
-
+    require "pry"; binding.pry
   end
 
 
