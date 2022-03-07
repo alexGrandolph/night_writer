@@ -3,7 +3,7 @@ require 'alphabet'
 
 class BrailleTranslator
 
-  attr_reader :braille
+  attr_reader :message, :braille
 
   def initialize(message)
     @message = message
