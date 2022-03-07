@@ -31,7 +31,6 @@ RSpec.describe Reader do
     end
 
     it 'can display welcome message' do
-
       expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_output.txt 2 characters").to_stdout
     end
   end
@@ -45,15 +44,22 @@ RSpec.describe Reader do
     end
 
     it 'can display welcome message' do
-      require "pry"; binding.pry
       expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_multi_output.txt 69 characters").to_stdout
     end
-
-
-
-
   end
 
+
+  context 'Iteration 3.3, integration of BrailleTranslator class'
+
+  before(:each) do
+      ARGV[0] = './spec/reader_test/final_message.txt'
+      ARGV[1] = './spec/reader_test/final_output.txt'
+      @reader = Reader.new
+  end
+
+    it 'can read the translator object initialization' do
+      expect(@reader.braille_translator).to be_a(BrailleTranslator)
+    end
 
 
 
