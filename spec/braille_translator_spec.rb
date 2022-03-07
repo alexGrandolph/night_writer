@@ -44,14 +44,16 @@ RSpec.describe BrailleTranslator do
       expect(@translator.format_message.count).to eq(3)
     end
 
+    it 'can return an array with three elements, one for each row' do
+      expect(@translator.long_lines).to be_a(Array)
+      expect(@translator.long_lines.count).to eq(3)
+    end
+
     it 'can give top_row, middle_row, bottom_row of all characters in message' do
       expect(@translator.top_row).to be_a(Array)
       expect(@translator.top_row.count).to eq(11)
-
-
       expect(@translator.middle_row).to be_a(Array)
       expect(@translator.middle_row.count).to eq(11)
-
       expect(@translator.bottom_row).to be_a(Array)
       expect(@translator.bottom_row.count).to eq(11)
     end
