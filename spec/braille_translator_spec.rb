@@ -63,6 +63,10 @@ RSpec.describe BrailleTranslator do
       expect(@translator.translate_message.last).to eq("d")
     end
 
+    it 'can return a fully formatted message ready for output' do
+      expect(@translator.output_ready_message).to be_a(String)
+    end
+
 
 
 
