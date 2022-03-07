@@ -22,9 +22,16 @@ class BrailleTranslator
     end
   end
 
+  def top_row
+    top = []
+    top << format_message[0]
+    top.join.split('')
+
+  end
+
   def translate_message
     whole_message = format_message
-    require "pry"; binding.pry
+
   end
 
 
