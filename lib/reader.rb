@@ -15,13 +15,16 @@ class Reader
     return ARGV[1] if ARGV[1]
   end
 
+  def read_message
+    File.open(@input_file).read
+  end
+
   def welcome_message
     message = File.open(@input_file).read
     writer = File.open(@output_file, "w")
     new = writer.write(message)
     print "created #{@output_file} #{message.length} characters"
   end
-
 
 
 
