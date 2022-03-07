@@ -61,6 +61,11 @@ RSpec.describe Reader do
       expect(@reader.braille_translator).to be_a(BrailleTranslator)
     end
 
+    it 'can output a translated message to the output file path' do
+      {@readeroutput_translated_message}.to output("created ./spec/reader_test/final_output.txt 500 characters").to_stdout
+      
+    end
+
 
 
 

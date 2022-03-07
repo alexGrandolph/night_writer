@@ -128,7 +128,7 @@ RSpec.describe Writer do
     end
 
     it 'can output the translated message into the output file' do
-        expect{@night.output_braille}.to output("created ./spec/test/80characters_output.txt containing 86 characters").to_stdout
+      expect{@night.output_braille}.to output("created ./spec/test/80characters_output.txt containing 86 characters").to_stdout
     end
 
 
