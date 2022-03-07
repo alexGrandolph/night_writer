@@ -5,7 +5,7 @@ class BrailleTranslator
 
   def initialize(message)
     @message = message
-    @english = Alphabet.new.english_to_braille
+    @braille = Alphabet.new.braille_to_english
   end
 
 
