@@ -25,7 +25,13 @@ RSpec.describe Reader do
       expect(@reader.output_file).to eq('./spec/reader_test/reader_output.txt')
     end
 
+    it 'can return read file as string' do
+      expect(@reader.read_message).to eq("h\n")
+      expect(@reader.read_message).to be_a(String)
+    end
+
     it 'can display welcome message' do
+
       expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_output.txt 2 characters").to_stdout
     end
   end
@@ -39,6 +45,7 @@ RSpec.describe Reader do
     end
 
     it 'can display welcome message' do
+      require "pry"; binding.pry
       expect{@reader.welcome_message}.to output("created ./spec/reader_test/reader_multi_output.txt 69 characters").to_stdout
     end
 
