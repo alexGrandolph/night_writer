@@ -16,10 +16,16 @@ RSpec.describe BrailleTranslator do
     end
 
     it 'has readable attributes' do
-      
+
       expect(@translator.braille).to be_a(Hash)
       expect(@translator.braille[["OO", "..", "O."]]).to eq("m")
       expect(@translator.message).to be_a(String)
+
+    end
+
+    it 'can format message string into a comma separated array' do
+      expect(@translator.format_message).to be_a(Array)
+      expect(@translator.format_message.count).to eq(3)
     end
 
 
