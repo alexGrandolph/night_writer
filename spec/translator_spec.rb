@@ -94,7 +94,16 @@ RSpec.describe Translator do
   context 'Refactor, testing punctuation' do
 
     before(:each) do
-      @translator = Translator.new("! . , ? - * ")
+      @translator = Translator.new("! . , ? - *")
     end
 
+    it 'can parse with punctuation' do
+      expect(@translator.parse_message.count).to eq(22)
+      expect(@translator.parse_message[1]).to eq('!')
+    end
+
+    it 'can formatted_braille_message with punctuation' do
+      expect(@translator.formatted_braille_message).to be_a(String)
+    end
+  end
 end
