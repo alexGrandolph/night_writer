@@ -33,7 +33,7 @@ RSpec.describe BrailleTranslator do
   end
 
   context 'Iteration 3.2, multi word message' do
-    
+
     before(:each) do
       @translator = BrailleTranslator.new("O.O.O.O.O....OO.O.O.OO\nOO.OO.O..O..OO.OOOO..O\n....O.O.O....OO.O.O...")
     end
@@ -74,6 +74,11 @@ RSpec.describe BrailleTranslator do
       expect(@translator.translate_message.count).to eq(11)
       expect(@translator.translate_message.first).to eq("h")
       expect(@translator.translate_message.last).to eq("d")
+    end
+
+    it 'can inverse(transpose) rows vs collumns when top,middle, bottom rows are combined' do
+      expect(@translator.format_rows).to be_a(Array)
+      expect(@translator.format_rows.count).to eq(11)
     end
 
     it 'can return a fully formatted message ready for output' do
