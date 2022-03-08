@@ -17,7 +17,7 @@ class Reader
   def output_translated_message
     writer = File.open(@output_file_path, "w")
     new = writer.write(@braille_translator.output_ready_message)
-    print "created #{@output_file_path} containing #{read_message.length} characters"
+    print "created #{@output_file_path} containing #{read_message.length/6} characters"
   end
 
 end
