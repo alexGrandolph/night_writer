@@ -61,6 +61,10 @@ class BrailleTranslator
     end
   end
 
+  def format_rows
+    final_message = [top_row, middle_row, bottom_row].transpose
+  end
+
   def translate_message
     final_message = [top_row, middle_row, bottom_row].transpose
     all_braille = @braille.keys
