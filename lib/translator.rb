@@ -7,15 +7,24 @@ class Translator
 
   def initialize(message)
     @message = message.split(/(\W)/)
-
     @english = Alphabet.new.english_to_braille
+  end
+
+  def parse_message
+    @message.map { |word| word }
+  end
+
+  def split_to_letters
+    parse_message.map do |word|
+      word.split('').map { |character| character }
+    end
   end
 
   def to_braille
     braille_characters = []
-    @message.each do |word|
-      word.split('').each do |character|
-        @english.each do |alphabet_letter, braille|
+    split_to_letters.map do |word|
+      word.map do |character|
+        @english.map do |alphabet_letter, braille|
           if character == alphabet_letter
             braille_characters << @english[character]
           end
@@ -38,16 +47,15 @@ class Translator
   end
 
   def top_row_formatted
-    top_row.each_slice(40).map {|s| s.join}
+    top_row.each_slice(40).map { |row| row.join }
   end
 
   def middle_row_formatted
-    middle_row.each_slice(40).map {|s| s.join}
+    middle_row.each_slice(40).map { |row| row.join }
   end
 
   def bottom_row_formatted
-    bottom_row.each_slice(40).map {|s| s.join}
-
+    bottom_row.each_slice(40).map { |row| row.join }
   end
 
   def formatted_braille_message
@@ -56,18 +64,13 @@ class Translator
     row3 = bottom_row_formatted
     loop_counter = row1.count
     index = 0
-    string = ""
+    final_message = ""
     loop_counter.times do
-      string << "#{row1[index]}\n#{row2[index]}\n#{row3[index]}\n\n"
+      final_message << "#{row1[index]}\n#{row2[index]}\n#{row3[index]}\n\n"
       index = index + 1
     end
-    string
-
-
+    final_message
   end
-
-#.join(',').gsub(',', '\n')
-
 
 
 end

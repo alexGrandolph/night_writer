@@ -1,9 +1,7 @@
 
-
 class Alphabet
 
   def initialize
-
   end
 
   def english_to_braille
@@ -34,14 +32,23 @@ class Alphabet
       "x" => ["OO", "..", "OO"],
       "y" => ["OO", ".O", "OO"],
       "z" => ["O.", ".O", "OO"],
-      " " => ["..", "..", ".."]
+      " " => ["..", "..", ".."],
+      "," => ["..", "O.", ".."],
+      ";" => ["..", "O.", "O."],
+      ":" => ["..", "OO", ".."],
+      "." => ["..", "OO", ".O"],
+      "!" => ["..", "OO", "O."],
+      "(" => ["..", "OO", "OO"],
+      ")" => ["..", "OO", "OO"],
+      "?" => ["..", "O.", "OO"],
+      """" => ["..", ".O", "OO"],
+      "'" => ["..", "..", "O."],
+      "-" => ["..", "..", "OO"],
     }
-
   end
 
   def braille_to_english
     english_to_braille.invert
-
   end
 
 end
