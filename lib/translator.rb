@@ -22,10 +22,9 @@ class Translator
 
   def to_braille
     braille_characters = []
-    @message.each do |word|
-      word.split('').each do |character|
-
-        @english.each do |alphabet_letter, braille|
+    split_to_letters.map do |word|
+      word.map do |character|
+        @english.map do |alphabet_letter, braille|
           if character == alphabet_letter
             braille_characters << @english[character]
           end
