@@ -66,9 +66,8 @@ class BrailleTranslator
   end
 
   def translate_message
-    final_message = [top_row, middle_row, bottom_row].transpose
     all_braille = @braille.keys
-    final_message.map do |collumn|
+    format_rows.map do |collumn|
       if all_braille.include?(collumn)
         @braille[collumn]
       end
