@@ -63,8 +63,8 @@ RSpec.describe Translator do
 
     it 'can make each letter/character of parse_words its own element an array' do
       expect(@translator.split_to_letters).to be_a(Array)
-      expect(@translator.split_to_letters.count).to eq(85)
-      expect(@translator.split_to_letters.count[10]).to eq('b')
+      expect(@translator.split_to_letters.count).to eq(32)
+      expect(@translator.split_to_letters[4]).to eq(["b", "r", "o", "w", "n"])
     end
 
 
