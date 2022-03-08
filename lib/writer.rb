@@ -9,7 +9,6 @@ class Writer
   def initialize()
     @input_file_path = ARGV[0]
     @output_file_path = new_output_file
-    @english_braille_alphabet = Alphabet.new.english_to_braille
     @translator = Translator.new(read_message)
   end
 
