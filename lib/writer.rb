@@ -4,7 +4,7 @@ require_relative 'io_able'
 
 
 class Writer
-  include IOable 
+  include IOable
 
   attr_reader :english_braille_alphabet, :translator
 
@@ -13,14 +13,6 @@ class Writer
     @output_file_path = new_output_file
     @translator = Translator.new(read_message)
   end
-
-  # def new_output_file
-  #   return ARGV[1] if ARGV[1]
-  # end
-  #
-  # def read_message
-  #   File.open(@input_file_path).read
-  # end
 
   def load_input
     input = read_message
