@@ -17,10 +17,6 @@ RSpec.describe Writer do
     it 'exists' do
       expect(@night).to be_a(Writer)
     end
-    # 
-    # it 'has readable attributes' do
-    #   expect(@night.english_braille_alphabet).to be_a(Hash)
-    # end
 
     it 'can receive new_output_file' do
       expect(@night.new_output_file).to eq(ARGV[1])

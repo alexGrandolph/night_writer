@@ -17,7 +17,7 @@ RSpec.describe Translator do
     it 'has readable attributes' do
       expect(@translator.message).to eq(["a", " ", "b"])
       expect(@translator.english).to be_a(Hash)
-      expect(@translator.english.keys).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
+      expect(@translator.english.keys).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ", ",", ";", ":", ".", "!", "(", ")", "?", "", "'", "-"])
       expect(@translator.english['m']).to eq(["OO", "..", "O."])
     end
 
@@ -38,7 +38,7 @@ RSpec.describe Translator do
     end
   end
 
-  context 'Iteration 2.1' do
+  context 'Iteration 2.2' do
 
     before(:each) do
       @translator = Translator.new("hello world")
@@ -49,7 +49,7 @@ RSpec.describe Translator do
     end
   end
 
-  context 'Iteration 2.2' do
+  context 'Iteration 2.3' do
 
     before(:each) do
       @translator = Translator.new("the quick brown fox jumped over the lazy brown dog pain pain pain pain pain pain pain")

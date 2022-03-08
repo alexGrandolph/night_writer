@@ -18,11 +18,11 @@ RSpec.describe Reader do
     end
 
     it 'has readable attributes' do
-      expect(@reader.input_file).to eq('./spec/reader_test/reader_input.txt')
+      expect(@reader.input_file_path).to eq('./spec/reader_test/reader_input.txt')
     end
 
     it 'can return the output file' do
-      expect(@reader.output_file).to eq('./spec/reader_test/reader_output.txt')
+      expect(@reader.output_file_path).to eq('./spec/reader_test/reader_output.txt')
     end
 
     it 'can return read file as string' do
