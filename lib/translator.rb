@@ -16,9 +16,7 @@ class Translator
 
   def split_to_letters
     parse_message.map do |word|
-      word.split('').map do |character|
-        character
-      end
+      word.split('').map { |character| character }
     end
   end
 
