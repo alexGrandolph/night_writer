@@ -31,7 +31,7 @@ RSpec.describe Reader do
     end
 
     it 'can display welcome message' do
-      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/reader_output.txt containing 2 characters").to_stdout
+      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/reader_output.txt containing 0 characters").to_stdout
     end
   end
 
@@ -44,7 +44,7 @@ RSpec.describe Reader do
     end
 
     it 'can display welcome message' do
-      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/reader_multi_output.txt containing 69 characters").to_stdout
+      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/reader_multi_output.txt containing 11 characters").to_stdout
     end
   end
 
@@ -62,7 +62,7 @@ RSpec.describe Reader do
     end
 
     it 'can output a translated message to the output file path' do
-      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/final_output.txt containing 629 characters").to_stdout
+      expect{@reader.output_translated_message}.to output("created ./spec/reader_test/final_output.txt containing 104 characters").to_stdout
     end
   end
 
