@@ -10,11 +10,15 @@ class Translator
     @english = Alphabet.new.english_to_braille
   end
 
+  def parse_message
+    @message.map { |word| word }
+  end
+
   def to_braille
     braille_characters = []
     @message.each do |word|
       word.split('').each do |character|
-        require "pry"; binding.pry
+        
         @english.each do |alphabet_letter, braille|
           if character == alphabet_letter
             braille_characters << @english[character]
