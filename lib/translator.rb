@@ -14,11 +14,19 @@ class Translator
     @message.map { |word| word }
   end
 
+  def split_to_letters
+    parse_message.map do |word|
+      word.split('').map do |character|
+        character
+      end
+    end
+  end
+
   def to_braille
     braille_characters = []
     @message.each do |word|
       word.split('').each do |character|
-        
+
         @english.each do |alphabet_letter, braille|
           if character == alphabet_letter
             braille_characters << @english[character]
