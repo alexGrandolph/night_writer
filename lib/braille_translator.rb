@@ -15,7 +15,6 @@ class BrailleTranslator
   end
 
   def translate
-    all_letters = @braille.values
     all_braille = @braille.keys
     if all_braille.include?(format_message)
       @braille[format_message]
@@ -36,7 +35,6 @@ class BrailleTranslator
       index += 3
     end
     new_message = [top, middle, bottom]
-    new_message
   end
 
   def top_row

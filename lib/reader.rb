@@ -14,13 +14,6 @@ class Reader
     @braille_translator = BrailleTranslator.new(read_message)
   end
 
-  def welcome_message
-    message = File.open(@input_file_path).read
-    writer = File.open(@output_file_path, "w")
-    new = writer.write(message)
-    print "created #{@output_file_path} #{message.length} characters"
-  end
-
   def output_translated_message
     writer = File.open(@output_file_path, "w")
     new = writer.write(@braille_translator.output_ready_message)
